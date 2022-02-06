@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>发表博文</title>
+
+<meta name="content-type" content="text/html; charset=UTF-8">
+<link rel="stylesheet"
+	href="../../../kindeditor-4.1.10/themes/default/default.css" />
+<link rel="stylesheet"
+	href="../../../kindeditor-4.1.10/plugins/code/prettify.css" />
+<script charset="utf-8" src="../../../kindeditor-4.1.10/kindeditor.js"></script>
+<script charset="utf-8" src="../../../kindeditor-4.1.10/lang/zh_CN.js"></script>
+<script charset="utf-8" src="../../../kindeditor-4.1.10/plugins/code/prettify.js"></script>
+<script src="/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="../../../adminjs/postAdd.js"></script>
+<style>
+  .ke-icon-audio {
+    background-position: 0px -528px;
+    width: 16px;
+    height: 16px;
+  }
+</style>
+</head>
+
+<body>
+	<form name="example" method="post" action="/posts/add">
+	<input id="post_id" type="hidden" name="id" value="{posts.id ?: ''}"/>
+	<input id="post_pic" type="hidden" name="postPic" value=""/>
+	    <strong>标题</strong><input name="ptitle" size="100" value="{posts.postTitle ?: ''}"><br />
+	    <strong>分类</strong><input name="types" size="20" maxlength="20" value="{posts.types ?: ''}"><br/>
+	    <strong>描述</strong><textarea name="description" cols="80" rows="3">{posts.description ?: ''}</textarea><br/>
+		<textarea name="content" cols="100" rows="8"
+			style="width:700px;height:400px;visibility:hidden;">{posts.content ?: ''}</textarea>
+		<strong>首图</strong><input type="file" name="file" id="file_upload"/>
+		<!-- 点击图片，打开文件选择器，确定，上传。(这是网络上的一个图片) -->
+<img id="show_file_upload" alt="" style="width: 200px; height: 200px" src="/images/weirweiwei.png">
+		<br/>
+		<br /> <input type="submit" name="button" value="提交内容" /> (提交快捷键:
+		Ctrl + Enter)
+	</form>
+<script type="text/javascript" src="../../../adminjs/postAdd_upload.js"></script>
+</body>
+</html>

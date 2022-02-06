@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>发表博文</title>
+
+<meta name="content-type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../editor.md/css/editormd.min.css" />
+
+<script type="text/javascript" charset="UTF-8" src="../../../easyui/jquery.min.js"></script>
+<link rel="stylesheet" id="easyuiTheme" href="../../../easyui/themes/default/easyui.css" type="text/css"></link>
+<link rel="stylesheet" id="easyuiTheme" href="../../../easyui/themes/icon.css" type="text/css"></link>
+<link rel="stylesheet" id="easyuiTheme" href="../../../easyui/themes/color.css" type="text/css"></link>
+<script type="text/javascript" src="../../../easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../../easyui/locale/easyui-lang-zh_CN.js"></script>
+
+</head>
+
+<body>
+	<form name="example" method="post" action="/posts/add">
+	<input id="post_id" type="hidden" name="id" value="{posts.id ?: ''}"/>
+	<input id="post_pic" type="hidden" name="postPic" value=""/>
+	    <strong>标题：</strong><input name="ptitle" size="100" value="{posts.postTitle ?: ''}"><br />
+	    <strong>分类：</strong><input name="types" size="50" maxlength="20" value="{posts.types ?: ''}"><br/>
+	    <strong>描述：</strong>
+	    <textarea name="description" cols="80" rows="3">{posts.description ?: ''}</textarea>
+	    <br/>
+		<strong>文章内容：</strong>
+<div id="test-editormd">
+                <textarea name="content" style="display:none;"></textarea>
+			</div>
+			
+		<strong>首图：</strong><input type="file" name="file" id="file_upload"/>
+		<!-- 点击图片，打开文件选择器，确定，上传。(这是网络上的一个图片) -->
+<img id="show_file_upload" alt="" style="width: 200px; height: 200px" src="/images/weirweiwei.png">
+		<br/>
+		<br /> <input class="easyui-linkbutton c1" type="submit" name="button" value="提交内容" style="width:120px;height:40px"/> (提交快捷键:
+		Ctrl + Enter)
+	</form>
+        <script src="../editor.md/editormd.min.js"></script>
+<script type="text/javascript" src="../../../adminjs/postAdd_md.js"></script>
+<script type="text/javascript" src="../../../adminjs/postAdd_upload.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>菜单添加修改</title>
+<meta name="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" charset="UTF-8" src="../../../easyui/jquery.min.js"></script>
+<link rel="stylesheet" id="easyuiTheme" href="../../../easyui/themes/default/easyui.css" type="text/css"></link>
+<link rel="stylesheet" id="easyuiTheme" href="../../../easyui/themes/icon.css" type="text/css"></link>
+<script type="text/javascript" src="../../../easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../../easyui/locale/easyui-lang-zh_CN.js"></script>
+
+<link rel="stylesheet" href="../../../style/syExtIcon.css" type="text/css"></link>
+<link rel="stylesheet" href="../../../style/syExtCss.css" type="text/css"></link>
+<script type="text/javascript" src="../../../js/ExtEasyui.js"></script>
+<script type="text/javascript" src="../../../js/Extjs.js"></script>
+<script type="text/javascript">
+var menuadd_submitForm = function(dialog, menu_treeGrid, west_tree,p) {
+	if ($('menu_addForm').form('validate')) {
+		/* $.post('/menu/add', $("#menu_addForm").serialize(), function(j) {
+			if (j.success) {
+				menu_treeGrid.treegrid('reload');
+				west_tree.tree('reload');
+				dialog.dialog('destroy');
+			}
+			p.messager.show({
+				title : '提示',
+				msg : j.msg,
+				timeout : 5000,
+				showType : 'slide'
+			});
+		}, 'json'); */
+		var fields = $('#menu_addForm').serializeArray();
+        var o = {}; //声明一个对象
+        $.each(fields, function(index, field) {
+            // obj[field.name] = field.value; //通过变量，将属性值，属性一起放到对象中
+            if (o[this.name] !== undefined) {
+                if (!o[this.name].push) {
+                    o[this.name] = [o[this.name]];
+                }
+                if (undefined != this.value && '' != this.value) {
+                    o[this.name].push(this.value);
+                }
+            } else {
+            	if (undefined != this.value && '' != this.value) {
+                   o[this.name] = this.value;
+            	}
+            }
+        })
+		
+		$.ajax({
+		    type: "POST",
+		    url: "/menu/add",
+		    contentType: "application/json", //必须有
+		    dataType: "json", //表示返回值类型，不必须
+		    data: JSON.stringify(o),
+		    success: function (j) {
+		    	menu_treeGrid.treegrid('reload');
+				west_tree.tree('reload');
+				dialog.dialog('destroy');
+				p.messager.show({
+					title : '提示',
+					msg : j.msg,
+					timeout : 5000,
+					showType : 'slide'
+				});
+		    },
+		    error : function(j){
+		    	p.messager.show({
+					title : '提示',
+					msg : j.msg,
+					timeout : 5000,
+					showType : 'slide'
+				});
+            }
+		});
+
+	}
+};
+</script>
+</head>
+
+<body>
+	<form id="menu_addForm" method="post">
+		<input type="hidden" id="menu_pid" name="PID" value="{tmenu.PID ?: ''}"/>
+		<input type="hidden" id="menu_id" name="id" value="{tmenu.id ?: ''}"/>
+		<table>
+			<tr>
+				<th>菜单名</th>
+				<td><input type="text" name="text" value="{tmenu.text ?: ''}" class="easyui-validatebox" data-options="required:true,missingMessage:'菜单名必填'" /></td>
+			</tr>
+			<tr>
+				<th>URL</th>
+				<td><input type="text" name="url" value="{tmenu.url ?: ''}" size="30" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

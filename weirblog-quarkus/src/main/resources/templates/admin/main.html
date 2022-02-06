@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>weir博客后台</title>
+<meta name="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" charset="UTF-8" src="../../../easyui/jquery.min.js"></script>
+<link rel="stylesheet" id="easyuiTheme" href="../../../easyui/themes/default/easyui.css" type="text/css"></link>
+<link rel="stylesheet" id="easyuiTheme" href="../../../easyui/themes/icon.css" type="text/css"></link>
+<script type="text/javascript" src="../../../easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../../easyui/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="../../js/jquery.cookie.js"></script>
+
+<link rel="stylesheet" href="../../../style/syExtIcon.css" type="text/css"></link>
+<link rel="stylesheet" href="../../../style/syExtCss.css" type="text/css"></link>
+<script type="text/javascript" src="../../../js/ExtEasyui.js"></script>
+<script type="text/javascript" src="../../../js/Extjs.js"></script>
+<script type="text/javascript" src="../../../adminjs/main.js"></script>
+</head>
+
+<body class="easyui-layout">
+<div data-options="region:'north',href:'/admin/index/north'" style="height: 30px; overflow: hidden;" class="logo"></div>
+	<div data-options="region:'west',href:'',split:true" title="导航" style="width: 200px; padding: 10px;">
+		<ul id="west_tree"></ul>
+	</div>
+	<div data-options="region:'center'" style="overflow: hidden;">
+		<div id="mainTabs">
+			<div title="博客" data-options="iconCls:'ext-icon-heart'">
+				<!-- <iframe src="/admin/index/welcome" allowTransparency="true" style="border: 0; width: 100%; height: 99%;" frameBorder="0"></iframe> -->
+			</div>
+		</div>
+	</div>
+	<div data-options="region:'south',href:'/admin/index/south',border:false" style="height: 30px; overflow: hidden;"></div>
+</body>
+</html>

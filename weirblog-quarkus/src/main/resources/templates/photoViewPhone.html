@@ -1,0 +1,27 @@
+{@java.util.List<com.weirblog.entity.PhotoImg> photoImgs}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bootstrap beign</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="Bookmark" href="/style/weir-min.jpeg">
+<link rel="shortcut icon" href="/style/weir-min.jpeg">
+	<link href="/css/animate.css" rel="stylesheet" type="text/css">
+	<link href="/css/photoViewPhone.css" rel="stylesheet" type="text/css">
+	
+	</head>
+  <body>
+	<ul class="img-container clearfix" id="container">
+
+	</ul>
+	<div class="large animated fadeInDown" id="large_container" style="display:none">
+		<img id="large_img">
+	</div>
+	{#for photoImg in photoImgs}
+	<input type="hidden" name="phone_imgs" value="/photo/imgView/{photoImg.imgPath}"/>
+	<input type="hidden" name="phone_thumbnails" value="/photo/imgThumbnailView/{photoImg.thumbnail}"/>
+	{/for}
+	<script src="/js/zepto.min.js"></script>
+	<script type="text/javascript" src="/js/blog/photoViewPhone.js"></script>
+  </body>
+</html>

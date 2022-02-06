@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.weir.quarkus.parent</groupId>
+    <artifactId>quarkus-parent</artifactId>
+    <description>quarkus工程学习</description>
+    <packaging>pom</packaging>
+    <version>1.0.0</version>
+
+    <modules>
+    <module>quarkus-demo-parent</module>
+    <module>quarkus-eventuate-tram-sagas-demo</module>
+    <module>weirblog-quarkus</module>
+    <module>weirblog-quarkus-reactive</module>
+    <module>quarkus-mybatis-demo</module>
+    <module>kafka-quarkus-producer-demo</module>
+    <module>kafka-quarkus-processor-demo</module>
+    <module>amqp-quarkus-producer-demo</module>
+    <module>amqp-quarkus-processor-demo</module>
+    <module>quarkus-narayana-lra-demo</module>
+    <module>spring-mqtt-demo</module>
+    </modules>
+
+    
+
+</project>

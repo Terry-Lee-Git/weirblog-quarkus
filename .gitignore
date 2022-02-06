@@ -1,0 +1,25 @@
+!.mvn/wrapper/maven-wrapper.jar
+
+### macOS ###
+.DS_Store
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.mvn
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### classes
+target/
+out/
+classes/
+logs/

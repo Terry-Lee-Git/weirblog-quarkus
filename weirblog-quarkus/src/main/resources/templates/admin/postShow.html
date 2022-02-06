@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>发表博文</title>
+
+<meta name="content-type" content="text/html; charset=UTF-8">
+<script src="/js/jquery-1.11.1.min.js"></script>
+<style>
+  .ke-icon-audio {
+    background-position: 0px -528px;
+    width: 16px;
+    height: 16px;
+  }
+</style>
+</head>
+
+<body>
+	<form name="example" method="post" action="/posts/add">
+	<input id="post_id" type="hidden" name="id" value="{posts.id ?: ''}"/>
+	<input id="post_pic" type="hidden" name="postPic" value=""/>
+	   
+		<strong>首图</strong><input type="file" name="file" id="file_upload"/>
+		<!-- 点击图片，打开文件选择器，确定，上传。(这是网络上的一个图片) -->
+<img id="show_file_upload" alt="" style="width: 200px; height: 200px" src="/images/weirweiwei.png">
+		<br/>
+		
+	</form>
+<script type="text/javascript" src="../../../adminjs/postAdd_upload.js"></script>
+</body>
+</html>

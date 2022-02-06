@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>菜单添加修改</title>
+<meta name="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" charset="UTF-8" src="../../../easyui/jquery.min.js"></script>
+<link rel="stylesheet" id="easyuiTheme" href="../../../easyui/themes/default/easyui.css" type="text/css"></link>
+<link rel="stylesheet" id="easyuiTheme" href="../../../easyui/themes/icon.css" type="text/css"></link>
+<script type="text/javascript" src="../../../easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../../easyui/locale/easyui-lang-zh_CN.js"></script>
+
+<link rel="stylesheet" href="../../../style/syExtIcon.css" type="text/css"></link>
+<link rel="stylesheet" href="../../../style/syExtCss.css" type="text/css"></link>
+<script type="text/javascript" src="../../../js/ExtEasyui.js"></script>
+<script type="text/javascript" src="../../../js/Extjs.js"></script>
+<script type="text/javascript">
+var menuadd_submitForm = function(dialog, menu_treeGrid, west_tree,p) {
+	if ($('menu_addForm').form('validate')) {
+		$.post('/menu/add', $("#menu_addForm").serialize(), function(j) {
+			if (j.success) {
+				menu_treeGrid.treegrid('reload');
+				west_tree.tree('reload');
+				dialog.dialog('destroy');
+			}
+			p.messager.show({
+				title : '提示',
+				msg : j.msg,
+				timeout : 5000,
+				showType : 'slide'
+			});
+		}, 'json');
+	}
+};
+</script>
+</head>
+
+<body>
+	<form id="menu_addForm" method="post">
+		<input type="hidden" id="menu_pid" name="pid" value="{tmenu.PID ?: ''}"/>
+		<input type="hidden" id="menu_id" name="id" value="{tmenu.id ?: ''}"/>
+		<table>
+			<tr>
+				<th>菜单名</th>
+				<td><input type="text" name="name" value="{tmenu.text ?: ''}" class="easyui-validatebox" data-options="required:true,missingMessage:'菜单名必填'" /></td>
+			</tr>
+			<tr>
+				<th>URL</th>
+				<td><input type="text" name="url" value="{tmenu.url ?: ''}" size="30" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

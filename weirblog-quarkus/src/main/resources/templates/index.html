@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>爱威尔</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform ">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="weir">
+<meta name="keywords" content="爱威尔博客，爱是行动的唯一标准。爱自己爱的人，做自己喜欢的事情。分享java,spring,spring mvc,hibernate,jpa,strtus2,activiti,easyui,hadoop。spring data jpa, quarkus,vertx kubernetes, istio, linkerd2, tekton等技术">
+<meta name="description" content="爱威尔博客，爱是行动的唯一标准。爱自己爱的人，做自己喜欢的事情，分享生活和java技术">
+
+<link rel="Bookmark" href="/style/weir-min.jpeg">
+<link rel="shortcut icon" href="/style/weir-min.jpeg">
+
+<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="/bootstrap/dmeng-2.0.9.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+<header id="masthead" itemscope="" itemtype="http://schema.org/WPHeader"
+	style="height: 146px;">
+	<div class="container header-content">
+		<div class="row">
+			<div class="col-lg-8 col-md-7 col-sm-6 col-xs-12">
+				<div class="header-logo">
+					<a href="http://www.loveweir.com" rel="home"><img
+						src="/style/weir03.jpeg" width="64"
+						height="64" alt="爱威尔"></a>
+				</div>
+				<div class="header-text">
+					<div class="name">
+						<a href="http://www.loveweir.com" rel="home" id="name" alt="爱威尔">爱威尔</a>
+					</div>
+					<div class="description" id="desc">爱是行动的唯一标准</div>
+				</div>
+			</div>  
+			<div class="col-lg-4 col-md-5 col-sm-6 col-xs-12">
+				<div class="header-profile">
+					<ul class="user-profile clearfix">
+						<li class="date">今天是 <strong id="now_date"></strong></li>
+						<li class="login clearfix">
+								<div id="wb_connect_btn"></div>
+								</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="navbar navbar-default navbar-static-top" role="banner">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".header-navbar-collapse">
+					<span class="sr-only">切换菜单</span><span class="icon-bar"></span><span
+						class="icon-bar"></span><span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="http://www.loveweir.com" rel="home" itemprop="headline" alt="爱威尔"><h1>爱威尔</h1></a>
+			</div>
+
+			<nav id="navbar"
+				class="collapse navbar-collapse header-navbar-collapse"
+				role="navigation" itemscope=""
+				itemtype="http://schema.org/SiteNavigationElement">
+				<ul class="nav navbar-nav">
+					<li><a href="http://www.loveweir.com" itemprop="url" alt="爱威尔-首页">首页</a></li>
+
+					<li><a href="/weir"
+						itemprop="url" alt="爱威尔-生活"><span class="glyphicon glyphicon-heart"></span>
+							生活</a></li>
+					<li><a href="/java"
+						itemprop="url" alt="爱威尔-java技术"><span class="glyphicon glyphicon-star"></span>
+							java技术</a></li>
+					<li><a href="/photos"
+						itemprop="url" alt="爱威尔-相册" target="_blank"><span class="glyphicon glyphicon-camera"></span>
+							相册</a></li>
+					<li><a href="/videos"
+						itemprop="url" alt="爱威尔-视频" target="_blank"><span class="glyphicon glyphicon-film"></span>
+							视频</a></li>
+					<li><a href="/me" itemprop="url" alt="爱威尔-个人经验" target="_blank">
+					        <span class="glyphicon glyphicon-user"></span>个人经验</a></li>
+
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/about" itemprop="url" alt="爱威尔-关于本站">关于本站</a></li>
+				</ul>
+			</nav>
+			<!-- #navbar -->
+		</div>
+	</div>
+</header>
+
+<div id="main" class="container">
+<div class="row">
+
+<div id="content" class="col-lg-8 col-md-8 archive" role="main" itemscope="" itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+	<div class="panel panel-default panel-archive" role="main">
+		<div class="panel-body">
+			<form action="/{indexVo.index}" method="post">
+             <input type="hidden" name="page"/>
+			
+			{#for posts in indexVo.pageView.records}
+			<article id="post-{posts.id}" class="panel panel-default archive"
+				data-post-id="{posts.id}" role="article" itemscope=""
+				itemtype="http://schema.org/Article">
+				<div class="panel-body">
+					<div class="entry-header page-header">
+						<h3 class="entry-title h4">
+							<a href="/view/{posts.id}"
+								rel="bookmark" itemprop="url" title="{posts.postTitle}"><span itemprop="name">{posts.postTitle}</span></a>
+						</h3>
+						<div class="entry-meta">
+							<span class="glyphicon glyphicon-user"></span>weir
+							<span class="glyphicon glyphicon-calendar"></span>
+							<time class="entry-date"
+								title="发表于{posts.createDate}修改于{posts.updateDate }"
+								datetime="{posts.createDate}" itemprop="datePublished">{posts.createDate}</time>
+							<span class="glyphicon glyphicon-list-alt"></span>{posts.types}
+							<span class="glyphicon glyphicon-comment"></span>{posts.readNum}
+						</div>
+					</div>
+					{#if posts.postPic??}
+					<fieldset>
+					<a href="/view/{posts.id}"
+								rel="bookmark" itemprop="url" title="{posts.postTitle}">
+					<img src="{posts.postPic}" width="600" height="234" />
+					</a>
+					</fieldset>
+					{/if}
+					<div class="entry-content" itemprop="description"
+						data-no-instant="">
+						<p>{posts.description}</p>
+					</div>
+				</div>
+			</article>
+			{/for}
+			
+			<ul class="pagination" role="navigation" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+				{#if indexVo.pageView.currentPage > 1}
+				  <li itemprop="name"><a class="page-numbers" href="{indexVo.index}?page={indexVo.pageView.minusOne}">上一页</a></li>
+				{/if}
+				
+				{#for wp in indexVo.pageView.pageIndex.endIndex}
+					{#if indexVo.pageView.currentPage eq wp}
+					  <li itemprop="name"><span class="page-numbers current">{wp}</span></li>
+					{#else}
+					  <li itemprop="name"><a class="page-numbers" href="{indexVo.index}?page={wp }">{wp}</a></li>
+					{/if}
+				{/for}
+				
+				{#if indexVo.pageView.currentPage < indexVo.pageView.totalPage}
+				  <li itemprop="name"><a class="page-numbers" href="{indexVo.index}?page={indexVo.pageView.addOne}">下一页</a></li>
+				{/if}
+			</ul>
+			</form>
+		</div>
+	</div>
+	</div>
+	
+	<div id="sidebar" class="col-lg-4 col-md-4" role="complementary"
+	itemscope="" itemtype="http://schema.org/WPSideBar">
+
+	<aside id="search-2" class="widget clearfix widget_search">
+		<form class="input-group" role="search" method="get" id="searchform"
+			action="/search">
+			<span class="input-group-addon">搜索</span> <input type="text"
+				class="form-control" placeholder="请输入检索关键词 &hellip;" name="keyWord" id="keyWord"
+				required> <span class="input-group-btn"><button
+					type="submit" class="btn btn-default" id="searchsubmit">
+					<span class="glyphicon glyphicon-search"></span>
+				</button></span>
+		</form>
+	</aside>
+
+	<aside id="text-3"
+		class="panel panel-default widget clearfix widget_text">
+		<div class="panel panel-success">
+						<div class="panel-heading">
+						
+						<h3 class="widget-title">公告</h3>
+						</div>
+						</div>
+		
+		<div class="textwidget">
+			<p class="text-danger">
+			这是最好的时代，这是最坏的时代；<br>
+			这是智慧的年代，这是愚蠢的年代；<br>
+			这是信仰的时期，这是怀疑的时期；<br>
+			这是光明的季节，这是黑暗的季节；<br>
+			这是希望之春，这是绝望之冬；<br>
+			我们拥有一切，我们一无所有；<br>
+			我们正走向天堂，我们都在奔向与其相反的地方。<br>
+                          ——狄更斯 《双城记》</p>
+
+		</div>
+	</aside>
+	
+	<aside id="text-6"
+		class="panel panel-default widget clearfix widget_text"
+		data-offset-top="1196"
+		style="width: 360px; position: static; top: 0px;">
+		<div class="textwidget">
+			<div class="well">
+				<p style="font-size:32px;margin:15px 0 25px 0;color:#31708f;">爱威尔</p>
+				<p>学习交流，加微信进群，微信：weirweiwei</p>
+				<p>加入公众号，分享java最新技术动态和个人技术分享</p>
+			    <img alt="" src="/images/weirweiwei公众号.jpeg">
+			</div>
+			
+		</div>
+	</aside>
+	
+	<aside id="recent-posts-2"
+		class="panel panel-default widget clearfix widget_recent_entries">
+		<div class="panel panel-info">
+						<div class="panel-heading">
+						<h3 class="widget-title">最新文章</h3>
+						</div>
+						</div>
+		
+		<ul>
+		    {#for posts in indexVo.rightNews}
+			    <li><a href="/view/{posts.id}" title="{posts.postTitle}">{posts.postTitle}</a></li>
+			{/for}
+		</ul>
+	</aside>
+	<aside id="accordion-dmengrank-2" class="panel-group">
+		
+		<div class="panel panel-warning">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion-dmengrank-2"
+						href="http://www.dmeng.net/about/#view-dmengrank-2"><span
+						class="glyphicon glyphicon-th-list"></span> 文章分类</a>
+				</h3>
+			</div>
+			<div id="view-dmengrank-2" class="panel-collapse collapse in">
+			{#for map in indexVo.mapType}
+				<li class="list-group-item"><span class="badge"
+					title="{map.key}">{map.value}</span> 
+					<a href="/search?keyWord={map.key}" title="{map.key}">{map.key}</a></li>
+			{/for}
+			</div>
+		</div>
+	</aside>
+	<!-- <aside id="accordion-dmengrank-2" class="panel-group">
+		
+		<div class="panel panel-danger">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion-dmengrank-2"
+						href="http://www.dmeng.net/about/#view-dmengrank-2"><span
+						class="glyphicon glyphicon-fire"></span> 浏览次数排行</a>
+				</h3>
+			</div>
+			<div id="view-dmengrank-2" class="panel-collapse collapse in">
+			{#for posts in indexVo.rightReads}
+				<li class="list-group-item"><span class="badge"
+					title="{posts.readNum}次浏览">{posts.readNum}</span> 
+					<a href="/view/{posts.id}" title="{posts.postTitle}">{posts.postTitle}</a></li>
+			{/for}
+			</div>
+		</div>
+	</aside> -->
+	
+	
+</div>
+	
+</div>
+</div>
+
+
+<script src="/js/jquery-1.11.1.min.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<script src="/bootstrap/dmeng-2.0.9.js"></script>
+
+<script type="text/javascript">
+function topage(page){
+	var form = document.forms[0];
+	form.page.value=page;
+	form.submit();
+}
+</script>
+
+	<script>
+		window._bd_share_config = {
+			"common" : {
+				"bdSnsKey" : {},
+				"bdText" : "",
+				"bdMini" : "2",
+				"bdMiniList" : false,
+				"bdPic" : "",
+				"bdStyle" : "0",
+				"bdSize" : "16"
+			},
+			"slide" : {
+				"type" : "slide",
+				"bdImg" : "4",
+				"bdPos" : "left",
+				"bdTop" : "89.5"
+			},
+			"image" : {
+				"viewList" : [ "qzone", "tsina", "tqq", "renren", "weixin" ],
+				"viewText" : "",
+				"viewSize" : "24"
+			},
+			"selectShare" : {
+				"bdContainerClass" : null,
+				"bdSelectMiniList" : [ "qzone", "tsina", "tqq", "renren",
+						"weixin" ]
+			}
+		};
+		with (document)
+			0[(getElementsByTagName('head')[0] || body)
+					.appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='
+					+ ~(-new Date() / 36e5)];
+	</script>
+
+
+
+<div id="colophon" class="container" role="contentinfo" itemscope="" itemtype="http://schema.org/WPFooter">
+<div class="panel panel-default text-muted">
++友情链接<p>
+<a class="glyphicon glyphicon-paperclip" href="http://www.bootcss.com/" target="_blank">Bootstrap中文网</a>
+<a class="glyphicon glyphicon-paperclip" href="http://www.oschina.net/" target="_blank">开源中国社区</a>
+<a class="glyphicon glyphicon-paperclip" href="http://www.cnblogs.com/" target="_blank">博客园</a>
+<a class="glyphicon glyphicon-paperclip" href="http://www.51cto.com/" target="_blank">51cto.com</a>
+<a class="glyphicon glyphicon-paperclip" href="http://www.iteye.com/" target="_blank">ITeye</a>
+<a class="glyphicon glyphicon-paperclip" href="http://www.csdn.net/" target="_blank">CSDN</a>
+<a class="glyphicon glyphicon-paperclip" href="http://www.blogjava.net/" target="_blank">BlogJava</a>
+<a class="glyphicon glyphicon-paperclip" href="http://www.jeasyui.com/" target="_blank">jQueryEasyUI</a>
+<a class="glyphicon glyphicon-paperclip" href="http://bbs.chinaunix.net/" target="_blank">ChinaUnix</a>
+<a class="glyphicon glyphicon-paperclip" href="http://www.imooc.com/" target="_blank">慕课网</a>
+<a class="glyphicon glyphicon-paperclip" href="http://blog.51cto.com/" target="_blank">51CTO技术博客</a>
+<a class="glyphicon glyphicon-paperclip" href="http://www.infoq.com/cn/" target="_blank">infoq</a>
+</p>
+</div>
+</div>
+
+<footer id="colophon" class="container" role="contentinfo" itemscope=""
+	itemtype="http://schema.org/WPFooter">
+	<div class="panel panel-default text-muted">
+		<div class="panel-footer clearfix">
+			© 2014-<span id="shuoming_next"></span>
+			@weir 版权所有<a href="https://beian.miit.gov.cn" target="_blank">豫ICP备2021013020号-1</a>
+			<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1253989825'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/stat.php%3Fid%3D1253989825%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+			<a id="pinganVerify"></a>
+		</div>
+	</div>
+</footer>
+<div class="btn-group-vertical floatButton">
+	<button type="button" class="btn btn-default" id="goTop" title="去顶部">
+		<span class="glyphicon glyphicon-arrow-up"></span>
+	</button>
+	<button type="button" class="btn btn-default" id="refresh" title="刷新">
+		<span class="glyphicon glyphicon-repeat"></span>
+	</button>
+	<button type="button" class="btn btn-default" id="pageQrcode" title="作者二维码">
+	<span class="glyphicon glyphicon-qrcode"></span>
+	<img class="qrcode" src="/images/weirweiwei.png" height="130" width="130"></button>
+	<button type="button" class="btn btn-default" id="goBottom" title="去底部">
+		<span class="glyphicon glyphicon-arrow-down"></span>
+	</button>
+</div>
+
+<script type="text/javascript" src="http://apply.trustutn.org/show?type=2&sn=994150615014811110048"></script>
+<script type="text/javascript" src="/js/blog/footer.js"></script>
+</body>
+</html>

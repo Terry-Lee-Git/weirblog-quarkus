@@ -1,0 +1,70 @@
+{@java.util.List<com.weirblog.entity.PhotoImg> photoImgs}
+<!DOCTYPE html>
+<html>
+	<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform ">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>爱威尔-相册</title>
+<meta name="description" content="爱是行动的唯一标准。爱自己爱的人，做自己喜欢的事情。java技术博客。">
+<meta name="keywords"
+	content="java,spring,spring mvc,hibernate,jpa,strtus2,activiti,easyui,hadoop">
+<meta name="author" content="weir">
+<link rel="Bookmark" href="/style/weir-min.jpeg">
+<link rel="shortcut icon" href="/style/weir-min.jpeg">
+<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="/css/font-awesome.min.css" rel="stylesheet" />
+<link href="/css/style.css" rel="stylesheet" />
+<link href="/css/magnific-popup.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="/css/site.min.css">
+
+<link rel="stylesheet" type="text/css" href="/jquery.fullscreen/fullscreenstyle.css" />
+<link rel="stylesheet" type="text/css" href="/jquery.fullscreen/pagestyle.css" />
+
+</head>
+
+<body class="home-template">
+
+	<div class="wrap">
+
+		<main class="main" role="main">
+			<div class="container">
+				<div class="row" id="post-list">
+                    {#for photoImg in photoImgs}
+						<div class="col-xs-12 col-md-4 col-lg-3">
+							<article class="post tag-ad">
+								<section class="post-featured-image">
+									<a class="thumbnail"
+										href="/photo/imgView/{photoImg.imgPath}" target="_blank">
+										<img src="/photo/imgThumbnailView/{photoImg.thumbnail}"
+										width="800" height="600" alt="{photoImg.imgDesc}" style="display: block;"
+										data-original="/photo/imgThumbnailView/{photoImg.thumbnail}">
+									</a>
+								</section>
+
+							</article>
+						</div>
+
+					{/for}
+				</div>
+			</div>
+
+		</main>
+
+	</div>
+
+	<script src="/js/jquery-1.11.1.min.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/jquery.lazyload.min.js"></script>
+<script src="/js/jquery.magnific-popup.min.js"></script>
+<script src="/js/handlebars.min.js"></script>
+<script type="text/javascript" src="/js/blog/photoView.js"></script>
+<script type="text/javascript" src="/jquery.fullscreen/jquery.fullscreenslides.min.js"></script>
+  <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"4","bdPos":"left","bdTop":"89.5"},"image":{"viewList":["qzone","tsina","tqq","renren","weixin"],"viewText":"","viewSize":"24"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["qzone","tsina","tqq","renren","weixin"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+  
+</body>
+</html>

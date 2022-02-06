@@ -1,0 +1,77 @@
+{@java.util.List<com.weirblog.entity.Photo> photos}
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform ">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>爱威尔-相册</title>
+<meta name="description" content="爱是行动的唯一标准。爱自己爱的人，做自己喜欢的事情。java技术博客。">
+<meta name="keywords"
+	content="java,spring,spring mvc,hibernate,jpa,strtus2,activiti,easyui,hadoop">
+<meta name="author" content="weir">
+<link rel="Bookmark" href="/style/weir-min.jpeg">
+<link rel="shortcut icon" href="/style/weir-min.jpeg">
+<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="/css/font-awesome.min.css" rel="stylesheet" />
+<link href="/css/style.css" rel="stylesheet" />
+<link href="/css/magnific-popup.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="/css/site.min.css">
+</head>
+
+<body class="home-template">
+
+	<div class="wrap">
+
+		<div class="header"
+			style="background-image: url(/images/weir.jpeg)">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						<div class="logotxt">
+							<h1>爱威尔</h1>
+						</div>
+						<h2 class="text-center">相册精选</h2>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<main class="main" role="main">
+			<div class="container">
+				<div class="row" id="post-list">
+					{#for photo in photos}
+						<div class="col-xs-12 col-md-6 col-lg-6">
+							<article class="post tag-ad">
+								<section class="post-featured-image">
+									<a class="thumbnail"
+										href="/photo/photoMain/{photo.id}" target="_blank">
+										<img src="/photo/imgThumbnailView/{photo.id}/{photo.thumbnail}"
+										width="800" height="600" alt="{photo.name}" style="display: block;"
+										data-original="/photo/imgThumbnailView/{photo.id}/{photo.thumbnail}">
+									</a>
+								</section>
+								<header class="post-header">
+									<h2 class="post-title">{photo.name}</h2>
+								</header>
+
+							</article>
+						</div>
+						{/for}
+				</div>
+			</div>
+
+		</main>
+
+	</div>
+	<script src="/js/jquery-1.11.1.min.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<script src="/js/jquery.lazyload.min.js"></script>
+<script src="/js/jquery.magnific-popup.min.js"></script>
+<script src="/js/handlebars.min.js"></script>
+</body>
+</html>

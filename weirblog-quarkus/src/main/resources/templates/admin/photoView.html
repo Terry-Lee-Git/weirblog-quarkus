@@ -1,0 +1,54 @@
+{@java.util.List<com.weirblog.entity.PhotoImg> photoImgs}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="apple-touch-fullscreen" content="YES" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>爱威尔-相册管理</title>
+<link href="/css/center.css" rel="stylesheet" />
+<link href="/css/pbl.css" rel="stylesheet" />
+<script src="/js/jquery-1.11.1.min.js"></script>
+<script src="/css/jquery.infinitescroll.js"></script>
+<script src="/css/jquery.masonry.js"></script>
+<script type="text/javascript" src="/adminjs/photoView.js"></script>
+</head>
+
+<body>
+<input type="hidden" id="phId" value="${id}"/>
+	<div class="pbl_container">
+		<div class="pblCon">
+			<div class="demo clearfix">
+				<div class="item_list infinite_scroll">
+                    {#for photoImg in photoImgs}
+						<div class="item masonry_brick">
+							<div class="item_t">
+								<div class="img">
+									<img
+										width="210" alt=""
+										src="/photo/imgThumbnailView/{photoImg.thumbnail}" />
+									<div class="btns">
+										<div class="f-r">
+											<a href="javascript:void(0);"  
+												class="Button2 Button11 WhiteButton ContrastButton likebuttonnotlogin" onclick="setTop('{photoImg.id}')">
+												<em></em><span class="text">封面</span>
+											</a>
+										</div>
+										
+										<div class="f-l">
+											<a href="javascript:void(0);"  
+												class="Button2 Button11 WhiteButton ContrastButton likebuttonnotlogin" onclick="setDelete('{photoImg.id}')">
+												<em></em><span class="text">删除</span>
+											</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+                    {/for}
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

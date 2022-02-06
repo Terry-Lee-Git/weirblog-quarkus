@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>相册添加</title>
+<meta name="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" charset="UTF-8" src="../../../easyui/jquery.min.js"></script>
+<link rel="stylesheet" id="easyuiTheme" href="../../../easyui/themes/default/easyui.css" type="text/css"></link>
+<link rel="stylesheet" id="easyuiTheme" href="../../../easyui/themes/icon.css" type="text/css"></link>
+<script type="text/javascript" src="../../../easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../../easyui/locale/easyui-lang-zh_CN.js"></script>
+<link rel="stylesheet" href="../../../style/syExtIcon.css" type="text/css"></link>
+<link rel="stylesheet" href="../../../style/syExtCss.css" type="text/css"></link>
+<script type="text/javascript" src="../../../js/ExtEasyui.js"></script>
+<script type="text/javascript" src="../../../js/Extjs.js"></script>
+<script type="text/javascript">
+var videoadd_submitForm = function(dialog, videoDataGrid,p) {
+	if ($('video_addForm').form('validate')) {
+		$.post('/video/add', $("#video_addForm").serialize(), function(j) {
+			if (j.success) {
+				videoDataGrid.datagrid('reload');
+				dialog.dialog('destroy');
+			}
+			p.messager.show({
+				title : '提示',
+				msg : j.msg,
+				timeout : 5000,
+				showType : 'slide'
+			});
+		}, 'json');
+	}
+};
+</script>
+</head>
+
+<body>
+	<form id="video_addForm" method="post">
+		<input type="hidden" id="video_id" name="id" value="{video.id ?: ''}"/>
+		<table>
+			<tr>
+				<th>视频名称</th>
+				<td><input name="vname" value="{video.vname ?: ''}" class="easyui-validatebox" data-options="required:true,missingMessage:'视频名称必填'" /></td>
+			</tr>
+			<tr>
+				<th>视频地址</th>
+				<td><textarea rows="3" cols="30" name="vurl">{video.vurl ?: ''}</textarea></td>
+			</tr>
+			<tr>
+				<th>简述</th>
+				<td><input name="vdesc" value="{video.vdesc ?: ''}" class="easyui-textbox" data-options="multiline:true" style="width:250px;height:50px"/></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

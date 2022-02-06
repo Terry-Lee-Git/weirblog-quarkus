@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>相册添加</title>
+<meta name="content-type" content="text/html; charset=UTF-8">
+<script type="text/javascript" charset="UTF-8" src="../../../easyui/jquery.min.js"></script>
+<link rel="stylesheet" id="easyuiTheme" href="../../../easyui/themes/default/easyui.css" type="text/css"></link>
+<link rel="stylesheet" id="easyuiTheme" href="../../../easyui/themes/icon.css" type="text/css"></link>
+<script type="text/javascript" src="../../../easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="../../../easyui/locale/easyui-lang-zh_CN.js"></script>
+<link rel="stylesheet" href="../../../style/syExtIcon.css" type="text/css"></link>
+<link rel="stylesheet" href="../../../style/syExtCss.css" type="text/css"></link>
+<script type="text/javascript" src="../../../js/ExtEasyui.js"></script>
+<script type="text/javascript" src="../../../js/Extjs.js"></script>
+<script type="text/javascript">
+var photoadd_submitForm = function(dialog, photoDataGrid,p) {
+	if ($('photo_addForm').form('validate')) {
+		$.post('/photo/add', $("#photo_addForm").serialize(), function(j) {
+			if (j.success) {
+				photoDataGrid.datagrid('reload');
+				dialog.dialog('destroy');
+			}
+			p.messager.show({
+				title : '提示',
+				msg : j.msg,
+				timeout : 5000,
+				showType : 'slide'
+			});
+		}, 'json');
+	}
+};
+</script>
+</head>
+
+<body>
+	<form id="photo_addForm" method="post">
+		<input type="hidden" id="photo_id" name="id" value="{photo.id ?: ''}"/>
+		<table>
+			<tr>
+				<th>相册名</th>
+				<td><input name="name" value="{photo.name ?: ''}" class="easyui-validatebox" data-options="required:true,missingMessage:'相册名称必填'" /></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

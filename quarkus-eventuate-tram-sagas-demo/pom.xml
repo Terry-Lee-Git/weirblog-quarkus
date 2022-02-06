@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.weir.quarkus.eventuate.tram.sagas</groupId>
+    <artifactId>quarkus-eventuate-tram-sagas-demo</artifactId>
+    <description>quarkus eventuate-tram sagas 分布式事务工程学习</description>
+    <packaging>pom</packaging>
+    <version>1.0.0</version>
+
+    <modules>
+    <module>common</module>
+    <module>order-service</module>
+    <module>order-service-api-web</module>
+    <module>order-service-api-messaging</module>
+    <module>customers-service</module>
+    <module>customers-service-api-web</module>
+    <module>customers-service-api-messaging</module>
+    </modules>
+
+    
+
+</project>

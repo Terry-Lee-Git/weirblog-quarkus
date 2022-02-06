@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>爱威尔-{postView.posts.postTitle}</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="UTF-8">
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform ">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="weir">
+<meta name="keywords" content="{postView.posts.postTitle}">
+<meta name="description" content="{postView.posts.description}">
+
+<link rel="Bookmark" href="/style/weir-min.jpeg">
+<link rel="shortcut icon" href="/style/weir-min.jpeg">
+
+<link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+<link href="/bootstrap/dmeng-2.0.9.css" rel="stylesheet" />
+
+<link rel="stylesheet" href="/editor.md/css/editormd.min.css" />
+
+</head>
+<body class="single single-post postid-1373 single-format-standard">
+<header id="masthead" itemscope="" itemtype="http://schema.org/WPHeader"
+	style="height: 146px;">
+	<div class="container header-content">
+		<div class="row">
+			<div class="col-lg-8 col-md-7 col-sm-6 col-xs-12">
+				<div class="header-logo">
+					<a href="http://www.loveweir.com" rel="home"><img
+						src="/style/weir.png" width="64"
+						height="64" alt="爱威尔"></a>
+				</div>
+				<div class="header-text">
+					<div class="name">
+						<a href="http://www.loveweir.com" rel="home" id="name" alt="爱威尔">爱威尔</a>
+					</div>
+					<div class="description" id="desc">爱是行动的唯一标准</div>
+				</div>
+			</div>  
+			<div class="col-lg-4 col-md-5 col-sm-6 col-xs-12">
+				<div class="header-profile">
+					<ul class="user-profile clearfix">
+						<li class="date">今天是 <strong id="now_date"></strong></li>
+						<li class="login clearfix">
+								<div id="wb_connect_btn"></div>
+								</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="navbar navbar-default navbar-static-top" role="banner">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".header-navbar-collapse">
+					<span class="sr-only">切换菜单</span><span class="icon-bar"></span><span
+						class="icon-bar"></span><span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="http://www.loveweir.com" rel="home" itemprop="headline" alt="爱威尔"><h1>爱威尔</h1></a>
+			</div>
+
+			<nav id="navbar"
+				class="collapse navbar-collapse header-navbar-collapse"
+				role="navigation" itemscope=""
+				itemtype="http://schema.org/SiteNavigationElement">
+				<ul class="nav navbar-nav">
+					<li><a href="http://www.loveweir.com" itemprop="url" alt="爱威尔-首页">首页</a></li>
+
+					<li><a href="/weir"
+						itemprop="url" alt="爱威尔-生活"><span class="glyphicon glyphicon-heart"></span>
+							生活</a></li>
+					<li><a href="/java"
+						itemprop="url" alt="爱威尔-java技术"><span class="glyphicon glyphicon-star"></span>
+							java技术</a></li>
+					<li><a href="/photos"
+						itemprop="url" alt="爱威尔-相册" target="_blank"><span class="glyphicon glyphicon-camera"></span>
+							相册</a></li>
+					<li><a href="/videos"
+						itemprop="url" alt="爱威尔-视频" target="_blank"><span class="glyphicon glyphicon-film"></span>
+							视频</a></li>
+					<li><a href="/me" itemprop="url" alt="爱威尔-个人经验" target="_blank">
+					        <span class="glyphicon glyphicon-user"></span>个人经验</a></li>
+
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/about" itemprop="url" alt="爱威尔-关于本站">关于本站</a></li>
+				</ul>
+			</nav>
+			<!-- #navbar -->
+		</div>
+	</div>
+</header>
+	<div id="main" class="container" role="main" itemscope=""
+		itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
+		<div class="row">
+			<article id="content" class="col-lg-8 col-md-8 single"
+				data-post-id="1373" role="article" itemscope=""
+				itemtype="http://schema.org/Article">
+				<div class="panel panel-default">
+					<div class="panel-body">
+						<div class="entry-header page-header"><input type="hidden" id="post_id" value="{postView.posts.id}"/>
+							<h1 class="entry-title h3" itemprop="name">{postView.posts.postTitle}</h1>
+							<div class="entry-meta">
+								<span class="glyphicon glyphicon-user"></span>weir <span
+									class="glyphicon glyphicon-calendar"></span>
+								<time class="entry-date"
+									title="发布于 {postView.posts.createDate } 最后编辑于 {postView.posts.updateDate} "
+									datetime="{postView.posts.createDate }" itemprop="datePublished">{postView.posts.createDate }</time>
+								<span class="glyphicon glyphicon-list-alt"></span>{postView.posts.types }
+								<span class="glyphicon glyphicon-comment"></span>{postView.posts.readNum }
+							</div>
+						</div>
+						{#if postView.posts.postPic??}
+						<fieldset>
+							<img src="{postView.posts.postPic}" width="700" height="300" />
+						</fieldset>
+						{/if}
+						<div id="md-content" class="entry-content" itemprop="articleBody"
+							data-no-instant="" style="font-size: 16px">
+							
+							<textarea style="display:none;">{postView.posts.content.raw }</textarea>
+						</div>
+					</div>
+				</div>
+
+				<!-- <div class="panel panel-default" id="comments" data-no-instant="">
+					<div class="list-group" id="respond">
+						<h4 class="list-group-item">发表评论</h4>
+						
+						<form action="" method="post" id="commentform" class="form-horizontal list-group-item" role="form" >
+							<div class="col-xs-4">
+    <input type="email" class="form-control" id="inputEmail" name="email" placeholder="邮箱通过验证才有资格发表评论"/>
+  </div>
+  <button type="button" id="btnSendCode" class="btn btn-default" onclick="sendEmailCheck()" autocomplete="off">发送邮箱验证</button>
+  <span id="error" class="alert alert-warning" style="display:none;" role="alert"></span><br>
+  <div id="showCheck" class="col-xs-4" style="display: none;">
+  <input class="form-control" id="inputCheck" placeholder="输入您邮箱收到的验证码" onblur="checkImg()"/>
+  <input class="form-control" id="inputName" name="name" placeholder="输入网名"/>
+  </div>
+							<textarea class="form-control" rows="3" name="content"
+								id="inputContent" required="required" placeholder="输入评论内容，您的关注就是对我最好的支持。么么哒！！！"></textarea>
+							<div id="comment-action" class="btn-toolbar clearfix"
+								role="toolbar">
+								<div class="btn-group">
+									<button class="btn btn-default" type="button" disabled="disabled" autocomplete="off" id="commentsubmit" onclick="submitComment()">发表评论</button>
+								</div>
+							</div>
+							<input type="hidden" name="postsId" value="{postView.posts.id}"/>
+							
+						</form>
+						
+					</div>
+
+
+				</div> -->
+
+			</article>
+			
+			<div id="sidebar" class="col-lg-4 col-md-4" role="complementary"
+	itemscope="" itemtype="http://schema.org/WPSideBar">
+
+	<aside id="search-2" class="widget clearfix widget_search">
+		<form class="input-group" role="search" method="get" id="searchform"
+			action="/search">
+			<span class="input-group-addon">搜索</span> <input type="text"
+				class="form-control" placeholder="请输入检索关键词 &hellip;" name="keyWord" id="keyWord"
+				required> <span class="input-group-btn"><button
+					type="submit" class="btn btn-default" id="searchsubmit">
+					<span class="glyphicon glyphicon-search"></span>
+				</button></span>
+		</form>
+	</aside>
+
+	<aside id="text-3"
+		class="panel panel-default widget clearfix widget_text">
+		<div class="panel panel-success">
+						<div class="panel-heading">
+						
+						<h3 class="widget-title">公告</h3>
+						</div>
+						</div>
+		
+		<div class="textwidget">
+			<p class="text-danger">
+			这是最好的时代，这是最坏的时代；<br>
+			这是智慧的年代，这是愚蠢的年代；<br>
+			这是信仰的时期，这是怀疑的时期；<br>
+			这是光明的季节，这是黑暗的季节；<br>
+			这是希望之春，这是绝望之冬；<br>
+			我们拥有一切，我们一无所有；<br>
+			我们正走向天堂，我们都在奔向与其相反的地方。<br>
+                          ——狄更斯 《双城记》</p>
+
+		</div>
+	</aside>
+	
+	<aside id="recent-posts-2"
+		class="panel panel-default widget clearfix widget_recent_entries">
+		<div class="panel panel-info">
+						<div class="panel-heading">
+						<h3 class="widget-title">最新文章</h3>
+						</div>
+						</div>
+		
+		<ul>
+		    {#for posts in postView.rightNews}
+			    <li><a href="/view/{posts.id}" title="{posts.postTitle}">{posts.postTitle}</a></li>
+			{/for}
+		</ul>
+	</aside>
+	<aside id="accordion-dmengrank-2" class="panel-group">
+		
+		<div class="panel panel-danger">
+			<div class="panel-heading">
+				<h3 class="panel-title">
+					<a data-toggle="collapse" data-parent="#accordion-dmengrank-2"
+						href="http://www.dmeng.net/about/#view-dmengrank-2"><span
+						class="glyphicon glyphicon-fire"></span> 浏览次数排行</a>
+				</h3>
+			</div>
+			<div id="view-dmengrank-2" class="panel-collapse collapse in">
+			{#for posts in postView.rightReads}
+				<li class="list-group-item"><span class="badge"
+					title="{posts.readNum}次浏览">{posts.readNum}</span> 
+					<a href="/view/{posts.id}" title="{posts.postTitle}">{posts.postTitle}</a></li>
+			{/for}
+			</div>
+		</div>
+	</aside>
+	
+	<aside id="text-6"
+		class="panel panel-default widget clearfix widget_text"
+		data-offset-top="1196"
+		style="width: 360px; position: static; top: 0px;">
+		<div class="textwidget">
+			<div class="well">
+				<p style="font-size:32px;margin:15px 0 25px 0;color:#31708f;">爱威尔</p>
+				<p>学习交流，加微信进群，微信：weirweiwei</p>
+			</div>
+			
+		</div>
+	</aside>
+</div>
+		</div>
+		
+	</div>
+
+<script src="/js/jquery-1.11.1.min.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<script src="/bootstrap/dmeng-2.0.9.js"></script>
+
+<script  src="/editor.md/editormd.min.js"></script>
+<script  src="/editor.md/lib/marked.min.js"></script>
+<script  src="/editor.md/lib/prettify.min.js"></script>
+
+<script type="text/javascript">
+$(function() {
+	$.get('/posts/pnum/' + $("#post_id").val(), function(j) {
+	}, 'json');
+});
+
+$(function() {
+            var myEditormdView;
+            myEditormdView = editormd.markdownToHTML("md-content", {
+                htmlDecode      : "style,script,iframe",  // you can filter tags decode
+                emoji           : true,
+                taskList        : true,
+                tex             : true,  // 默认不解析
+                flowChart       : false,  // 默认不解析
+                sequenceDiagram : false,  // 默认不解析
+            });
+        });
+</script>
+
+	<script>
+		window._bd_share_config = {
+			"common" : {
+				"bdSnsKey" : {},
+				"bdText" : "",
+				"bdMini" : "2",
+				"bdMiniList" : false,
+				"bdPic" : "",
+				"bdStyle" : "0",
+				"bdSize" : "16"
+			},
+			"slide" : {
+				"type" : "slide",
+				"bdImg" : "4",
+				"bdPos" : "left",
+				"bdTop" : "89.5"
+			},
+			"image" : {
+				"viewList" : [ "qzone", "tsina", "tqq", "renren", "weixin" ],
+				"viewText" : "",
+				"viewSize" : "24"
+			},
+			"selectShare" : {
+				"bdContainerClass" : null,
+				"bdSelectMiniList" : [ "qzone", "tsina", "tqq", "renren",
+						"weixin" ]
+			}
+		};
+		with (document)
+			0[(getElementsByTagName('head')[0] || body)
+					.appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='
+					+ ~(-new Date() / 36e5)];
+	</script>
+
+
+<footer id="colophon" class="container" role="contentinfo" itemscope=""
+	itemtype="http://schema.org/WPFooter">
+	<div class="panel panel-default text-muted">
+		<div class="panel-footer clearfix">
+			© 2014-<span id="shuoming_next"></span>
+			@weir 版权所有<a href="https://beian.miit.gov.cn" target="_blank">豫ICP备2021013020号-1</a>
+			<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1253989825'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/stat.php%3Fid%3D1253989825%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script>
+			<a id="pinganVerify"></a>
+		</div>
+	</div>
+</footer>
+<script type="text/javascript" src="http://apply.trustutn.org/show?type=2&sn=994150615014811110048"></script>
+<div class="btn-group-vertical floatButton">
+	<button type="button" class="btn btn-default" id="goTop" title="去顶部">
+		<span class="glyphicon glyphicon-arrow-up"></span>
+	</button>
+	<button type="button" class="btn btn-default" id="refresh" title="刷新">
+		<span class="glyphicon glyphicon-repeat"></span>
+	</button>
+	<button type="button" class="btn btn-default" id="pageQrcode" title="作者二维码">
+	<span class="glyphicon glyphicon-qrcode"></span>
+	<img class="qrcode" src="/images/weirweiwei.png" height="130" width="130"></button>
+	<button type="button" class="btn btn-default" id="goBottom" title="去底部">
+		<span class="glyphicon glyphicon-arrow-down"></span>
+	</button>
+</div>
+<script type="text/javascript" src="http://apply.trustutn.org/show?type=2&sn=994150615014811110048"></script>
+<script type="text/javascript" src="/js/blog/footer.js"></script>
+</body>
+</html>

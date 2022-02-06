@@ -1,0 +1,25 @@
+server:
+  port: 8087
+
+mqtt:
+  username: admin
+  pwd: public
+  url: tcp://127.0.0.1:1883
+  client:
+    id: 1133363739727241217
+  default:
+    topic: data
+  completionTimeout: 3000
+  dataIntervalTime: 120000
+springdoc:
+  version: '@springdoc.version@'
+  api-docs:
+    groups:
+      enabled: true
+  swagger-ui:
+    display-request-duration: true
+    groups-order: DESC
+    operationsSorter: method
+    disable-swagger-default-url: true
+    use-root-path: true
+  show-actuator: false
